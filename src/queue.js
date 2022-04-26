@@ -23,6 +23,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 class Queue {
 
   constructor() {
+    this.first = null;
+    this.last = null;
     this.length = 0;
   }
 
@@ -32,6 +34,7 @@ class Queue {
 
   enqueue(value) {
     const node = new Node(value);
+    
     if (!this.length) {
       this.first = node;
       this.last = node;
